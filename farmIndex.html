@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farm Assistant - Your Digital Farming Guide</title>
+    <link rel="stylesheet" href="farmUI.css">
+    <!-- Remove this if you don’t have the file -->
+    <!-- <link rel="icon" href="/favicon.ico"> -->
+
+    <!-- Or fix to a valid relative path if you add the file -->
+    <!-- <link rel="icon" href="../favicon.ico"> -->
+</head>
+<body>
+    <header class="top-card" role="banner">
+        <div class="header-controls">
+            <h1>Smart Farm Assistant</h1>
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                <svg class="sun-icon" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 000-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 000-1.41.996.996 0 00-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 000-1.41.996.996 0 00-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+                </svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 01-4.4 2.26 5.403 5.403 0 01-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/>
+                </svg>
+            </button>
+        </div>
+        <p class="subtitle">Your AI-powered farming companion</p>
+        
+        <!-- Location Settings Section -->
+        <div class="location-settings">
+            <div class="location-input">
+                <input type="text" id="locationInput" placeholder="Enter your location" aria-label="Enter your location">
+                <button id="detectLocation" aria-label="Detect my location">
+                    <svg viewBox="0 0 24 24" width="18" height="18">
+                        <path fill="currentColor" d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0013 3.06V1h-2v2.06A8.994 8.994 0 003.06 11H1v2h2.06A8.994 8.994 0 0011 20.94V23h2v-2.06A8.994 8.994 0 0020.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="climate-info" id="climateInfo">
+                <span class="climate-zone">Climate Zone: <span id="climateZone">-</span></span>
+                <span class="season">Current Season: <span id="currentSeason">-</span></span>
+            </div>
+        </div>
+
+        <nav class="nav-menu" role="navigation" aria-label="Main navigation">
+            <a href="#" class="nav-item active" data-section="crop" role="tab" aria-selected="true" aria-controls="crop-section">Crop Management</a>
+            <a href="#" class="nav-item" data-section="soil" role="tab" aria-selected="false" aria-controls="soil-section">Soil Health</a>
+            <a href="#" class="nav-item" data-section="weather" role="tab" aria-selected="false" aria-controls="weather-section">Weather Monitoring</a>
+            <a href="#" class="nav-item" data-section="seasonal" role="tab" aria-selected="false" aria-controls="seasonal-section">Seasonal Guide</a>
+        </nav>
+    </header>
+    
+    <main class="content-sections" role="main">
+        <div class="section active" id="crop-section" role="tabpanel" aria-labelledby="crop-tab">
+            <h2>Crop Management</h2>
+            <div class="section-content">
+                <h3>Planting Guide</h3>
+                <ul>
+                    <li>Optimal planting seasons for different crops</li>
+                    <li>Crop rotation strategies</li>
+                    <li>Spacing and depth guidelines</li>
+                </ul>
+                <h3>Growth Monitoring</h3>
+                <ul>
+                    <li>Plant health indicators</li>
+                    <li>Growth stage tracking</li>
+                    <li>Yield estimation</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section" id="soil-section" role="tabpanel" aria-labelledby="soil-tab">
+            <h2>Soil Health</h2>
+            <div class="section-content">
+                <h3>Soil Analysis</h3>
+                <ul>
+                    <li>pH level monitoring</li>
+                    <li>Nutrient content tracking</li>
+                    <li>Organic matter assessment</li>
+                </ul>
+                <h3>Soil Management</h3>
+                <ul>
+                    <li>Fertilization schedules</li>
+                    <li>Soil amendment recommendations</li>
+                    <li>Erosion prevention techniques</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section" id="weather-section" role="tabpanel" aria-labelledby="weather-tab">
+            <h2>Weather Monitoring</h2>
+            <div class="section-content">
+                <h3>Weather Forecasts</h3>
+                <ul>
+                    <li>Daily temperature predictions</li>
+                    <li>Precipitation forecasts</li>
+                    <li>Frost and heat warnings</li>
+                </ul>
+                <h3>Climate Impact</h3>
+                <ul>
+                    <li>Crop-specific weather considerations</li>
+                    <li>Seasonal adaptation strategies</li>
+                    <li>Climate change resilience</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section" id="seasonal-section" role="tabpanel" aria-labelledby="seasonal-tab">
+            <h2>Seasonal Planting Guide</h2>
+            
+            <div class="seasonal-info">
+                <div class="date-display">
+                    <span class="current-date" id="currentDate">Current Date: -</span>
+                    <span class="current-season" id="seasonDisplay">Season: -</span>
+                </div>
+            </div>
+
+            <div class="planting-calendar">
+                <div class="month-cards" id="monthCards">
+                    <!-- Month cards will be generated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="growing-calculator">
+                <h3>Growing Season Calculator</h3>
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <label for="cropSelect">Select Crop</label>
+                        <select id="cropSelect">
+                            <option value="">Choose a crop...</option>
+                            <option value="tomatoes">Tomatoes</option>
+                            <option value="lettuce">Lettuce</option>
+                            <option value="carrots">Carrots</option>
+                            <option value="beans">Beans</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="plantingDate">Planting Date</label>
+                        <input type="date" id="plantingDate">
+                    </div>
+                </div>
+                <div class="calculation-result" id="growingResult">
+                    <div class="result-header">
+                        <span class="growing-period">Growing Period: -</span>
+                        <span class="date-range">Expected Harvest: -</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="chat-container" role="complementary" aria-label="Chat interface">
+        <div class="chat-header">
+            <h3>Chat Assistant</h3>
+        </div>
+        <div class="messages" id="messages" role="log" aria-live="polite">
+            <!-- Messages will be displayed here -->
+        </div>
+        <div class="input-area" role="form" aria-label="Message input">
+            <input type="text" id="userInput" placeholder="Ask your question..." aria-label="Type your question" />
+            <button id="sendButton" aria-label="Send message">Send</button>
+        </div>
+    </div>
+    <script type="module" src="farmScript.js"></script>
+</body>
+</html>
